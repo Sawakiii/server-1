@@ -8,6 +8,7 @@ const App = () => {
     const handleGet = () => {
         fetch("/api")
         .then(res=>res.json())
+        .catch(err=>console.error(err))
         .then(res => {
             setMessage(res.msg)
         })
@@ -22,6 +23,7 @@ const App = () => {
                 title: "POSTしたぞ"
             })
         }).then(res=>res.json())
+        .catch(err=>console.error(err))
         .then(res=>{
             setMessage(res.msg)
         })
